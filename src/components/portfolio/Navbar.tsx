@@ -7,7 +7,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("#home");
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     const onScroll = () => {
@@ -27,8 +27,19 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    setDark(savedTheme === "dark");
+  } else {
+    setDark(true); // Default theme
+  }
+}, []);
+
+useEffect(() => {
+  document.documentElement.classList.toggle("dark", dark);
+  localStorage.setItem("theme", dark ? "dark" : "light");
+}, [dark]);
 
   return (
     <header

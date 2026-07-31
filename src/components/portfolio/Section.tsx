@@ -38,7 +38,7 @@ export function Section({
         {title}
       </h2>
       {intro && (
-        <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">{intro}</p>
+        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">{intro}</p>
       )}
     </div>
   </div>
@@ -48,7 +48,7 @@ export function Section({
               <span className="mr-3 text-foreground">/{eyebrow}</span>
             </div>
             <div className="md:pl-10">
-              <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-5xl">
+              <h2 className="text-balance text-3xl font-semibold tracking-tight leading-[0.95] md:text-5xl">
                 {title}
               </h2>
               {intro && (

@@ -17,7 +17,7 @@ export function About() {
   eyebrow="about"
   centered
   variant="alt"
-  title="DevOps Engineer, Building Cloud Systems That Actually Ship"
+  title="Building Cloud Systems"
   intro="I'm a Computer Science graduate focused on Cloud and DevOps Engineering. I enjoy building production-inspired systems that automate infrastructure, deployments, monitoring, and container orchestration. Every project helps me better understand how modern cloud platforms operate and how reliable systems are built."
 >
       <div className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
