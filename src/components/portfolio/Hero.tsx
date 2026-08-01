@@ -45,7 +45,7 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.25 }}
             className="mt-8 max-w-4xl text-base leading-relaxed text-muted-foreground md:text-lg"
             >
-              Five end-to-end AWS projects: CI/CD pipelines, containerized deployments on ECS and EKS, and infrastructure as code with Terraform. Each one debugged through real failures — IAM misconfigurations, health check mismatches, broken rollouts — with fixes documented, not just working demos.
+              Five plus end-to-end AWS projects: CI/CD pipelines, containerized deployments on ECS and EKS, and infrastructure as code with Terraform. Each one debugged through real failures — IAM misconfigurations, health check mismatches, broken rollouts — with fixes documented, not just working demos.
             </motion.p>
 
             <motion.div
