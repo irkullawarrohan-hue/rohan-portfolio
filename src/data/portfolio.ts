@@ -192,6 +192,30 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/irkullawarrohan-hue/proactive-monitoring-and-security-auto-remediation-for-ec2-aws",
     documentation: "https://drive.google.com/file/d/170BY7fROXSaiXgaRyIeTIHQbPkHzFFh_/view?usp=sharing",
   },
+   {
+    title: "Production Infrastructure on AWS using Terraform & ECS Fargate",
+category: "Infrastructure",
+kind: "terraform",
+image: "https://i.ibb.co/Df1mvV82/3a52a01a-4df4-4bd8-99b8-7f3bf6d8cbee.png",
+description:
+  "Provisioned a production-ready AWS infrastructure using Terraform and automated container deployments to Amazon ECS Fargate with GitHub Actions CI/CD.",
+tech: [
+  "Terraform",
+  "Amazon ECS Fargate",
+  "Amazon ECR",
+  "GitHub Actions",
+  "ALB",
+  "Amazon VPC"
+],
+problem:
+  "Manual infrastructure and deployments were slow, error-prone, and inconsistent.",
+challenges:
+  "Built modular Terraform, secure networking, and automated CI/CD with OIDC.",
+learnings:
+  "Terraform, ECS Fargate, CI/CD, OIDC, AWS networking, and Infrastructure as Code.",
+    github: "https://github.com/irkullawarrohan-hue/terraform-aws-ecs-fargate-cicd",
+    documentation: "https://drive.google.com/file/d/1eIAUO2NSzQoun0WC2CNvASU9iABXZrmZ/view?usp=sharing",
+  },
 ];
 
 export const EXPERIENCE = [
