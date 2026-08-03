@@ -11,7 +11,7 @@ export function Skills() {
       title="A focused toolkit, used seriously."
       intro="These are the tools I've actually used across the projects on this page, not just listed"
     >
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
         {SKILLS.map((group, i) => (
           <Reveal key={group.category} delay={i * 0.04}>
             <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30">
@@ -40,7 +40,7 @@ export function Skills() {
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground opacity-70 transition-opacity duration-300 group-hover:opacity-100">
                 {group.description}
               </p>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-auto pt-5 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
                     key={item}
