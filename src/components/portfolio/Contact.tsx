@@ -72,10 +72,9 @@ export function Contact() {
               ) : (
                 <div
                   key={c.label}
-                  className="group flex flex-1 items-center justify-between rounded-2xl border border-border bg-card p-5"
-                >
+className="group flex items-center justify-between rounded-2xl border border-border bg-card p-4 md:p-5 transition-all hover:-translate-y-0.5 hover:border-foreground/30"                >
                   <div className="flex items-center gap-4">
-                    <div className="grid h-10 w-10 place-items-center rounded-full border border-border">
+                   <div className="grid h-9 w-9 md:h-10 md:w-10 place-items-center rounded-full border border-border">
                       <c.icon size={15} />
                     </div>
                     <div>
@@ -85,11 +84,6 @@ export function Contact() {
                       <div className="text-sm">{c.value}</div>
                     </div>
                   </div>
-
-                  <ArrowRight
-                    size={16}
-                    className="text-muted-foreground"
-                  />
                 </div>
               )
             )}
@@ -99,7 +93,7 @@ export function Contact() {
         <Reveal delay={0.1}>
           <form
             onSubmit={handleSubmit}
-            className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 md:p-8"
+            className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 md:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name" name="name" required />
@@ -126,7 +120,7 @@ export function Contact() {
               <textarea
                 name="message"
                 required
-                rows={5}
+                rows={4}
                 className="mt-2 w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-foreground"
                 placeholder="Tell me about the role or project…"
               />

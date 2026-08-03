@@ -21,25 +21,50 @@ export function Certifications() {
                   <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
                     {c.issuer}
                   </div>
-                  <h3 className="mt-1.5 text-base font-medium tracking-tight">{c.name}</h3>
+
+                  <h3 className="mt-1.5 text-base font-medium tracking-tight">
+                    {c.name}
+                  </h3>
+
                   <span className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">
                     <CheckCircle2 size={11} /> {c.status}
                   </span>
                 </div>
-                <Award size={22} className="shrink-0 text-foreground/70 transition-transform duration-500 group-hover:rotate-6" />
+
+                <Award
+                  size={22}
+                  className="shrink-0 text-foreground/70 transition-transform duration-500 group-hover:rotate-6"
+                />
               </div>
-              <div className="mt-5 max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-24 group-hover:opacity-100">
+
+              {/* Desktop Hover */}
+              <div className="mt-5 hidden max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-24 group-hover:opacity-100 md:block">
                 <div className="flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
                   <span>Track: {c.issuer}</span>
+
                   <a
-  href={c.link}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[11px] text-foreground transition-colors hover:bg-muted"
->
-  <ExternalLink size={11} /> Verify
-</a>
+                    href={c.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[11px] text-foreground transition-colors hover:bg-muted"
+                  >
+                    <ExternalLink size={11} />
+                    Verify
+                  </a>
                 </div>
+              </div>
+
+              {/* Mobile */}
+              <div className="mt-5 border-t border-border pt-4 md:hidden">
+                <a
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border py-2 text-sm font-medium transition-colors hover:bg-muted"
+                >
+                  <ExternalLink size={14} />
+                  Verify Certificate
+                </a>
               </div>
             </div>
           </Reveal>

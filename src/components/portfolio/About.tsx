@@ -14,7 +14,15 @@ export function About() {
   return (
     <Section
   id="about"
-  eyebrow="about"
+  eyebrow={
+  <>
+    <span className="hidden md:inline">ABOUT</span>
+
+    <span className="block text-center md:hidden">
+      /ABOUT
+    </span>
+  </>
+}
   centered
   variant="alt"
   title="Building Cloud Systems"

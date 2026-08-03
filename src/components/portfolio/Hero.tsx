@@ -4,19 +4,27 @@ import { PipelineDiagram } from "./PipelineDiagram";
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-20 md:pt-22">
-      {/* subtle blueprint backdrop */}
+    <section
+      id="home"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-20"
+    >
+      {/* Blueprint Background */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-blueprint opacity-70 mask-fade"
       />
-      <div className="container-x relative">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_1fr]">
+
+      <div className="relative mx-auto w-full max-w-[1440px] px-8">
+        <div className="grid items-center gap-10 lg:min-h-[80svh] lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+          {/* Left */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-muted-foreground"
             >
               <span className="relative inline-flex h-2 w-2">
@@ -29,29 +37,45 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-[80px]"
-            >
+              transition={{
+                duration: 0.9,
+                delay: 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="mt-6 text-[34px] font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-7xl xl:text-[80px]"            >
               Hi, I'm Rohan —
               <br />
               <span className="text-muted-foreground">
-                DevOps &<br className="hidden sm:block" /> Cloud Engineer.
+                DevOps &
+                <br className="hidden sm:block" />
+                Cloud Engineer.
               </span>
             </motion.h1>
 
             <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.25 }}
-            className="mt-8 max-w-4xl text-base leading-relaxed text-muted-foreground md:text-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.9,
+                delay: 0.25,
+              }}
+              className="mt-5 max-w-md text-[15px] leading-7 text-muted-foreground md:mt-8 md:max-w-2xl md:text-lg"
             >
-              Five plus end-to-end AWS projects: CI/CD pipelines, containerized deployments on ECS and EKS, and infrastructure as code with Terraform. Each one debugged through real failures — IAM misconfigurations, health check mismatches, broken rollouts — with fixes documented, not just working demos.
+              Five plus end-to-end AWS projects: CI/CD pipelines,
+              containerized deployments on ECS and EKS, and
+              infrastructure as code with Terraform. Each one debugged
+              through real failures — IAM misconfigurations, health
+              check mismatches, broken rollouts — with fixes
+              documented, not just working demos.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.4 }}
+              transition={{
+                duration: 0.9,
+                delay: 0.4,
+              }}
               className="mt-10 flex flex-wrap items-center gap-3"
             >
               <a
@@ -64,35 +88,48 @@ export function Hero() {
                   className="transition-transform group-hover:translate-x-0.5"
                 />
               </a>
+
               <a
                 href="https://drive.google.com/uc?export=download&id=1QViXUZsZ7v-yC3iRD-bu4yhMC1YHIQGj"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-5 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-muted"
               >
-                <Download size={16} /> Download Resume
+                <Download size={16} />
+                Download Resume
               </a>
             </motion.div>
           </div>
 
-          {/* right: pipeline diagram */}
+          {/* Right */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            <PipelineDiagram />
-          </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.9,
+    delay: 0.35,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="relative hidden lg:flex justify-center"
+>
+  <PipelineDiagram />
+</motion.div>
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          className="mt-20 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-muted-foreground md:mt-28"
+          transition={{
+            delay: 1.2,
+            duration: 1,
+          }}
+          className="mt-12 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-muted-foreground lg:mt-20"
         >
           <motion.span
             animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+            transition={{
+              repeat: Infinity,
+              duration: 2.2,
+              ease: "easeInOut",
+            }}
             className="inline-flex"
           >
             <ChevronDown size={0} />

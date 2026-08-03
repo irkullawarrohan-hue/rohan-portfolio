@@ -10,7 +10,7 @@ export function Section({
   centered = false,
 }: {
   id: string;
-  eyebrow: string;
+  eyebrow: ReactNode;
   title: string;
   intro?: string;
   children: ReactNode;
@@ -30,15 +30,15 @@ export function Section({
       <div className="container-x">
        {centered ? (
   <div className="mb-14 md:mb-20">
-    <div className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-      <span className="text-foreground">/{eyebrow}</span>
-    </div>
+    <div className="mb-4 hidden text-xs uppercase tracking-[0.2em] text-muted-foreground md:block">
+  <span className="text-foreground">/{eyebrow}</span>
+</div>
     <div className="mx-auto max-w-3xl text-center">
-      <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-5xl">
+      <h2 className="text-balance text-[2rem] font-semibold tracking-tight md:text-5xl">
         {title}
       </h2>
       {intro && (
-        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">{intro}</p>
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground md:text-lg">{intro}</p>
       )}
     </div>
   </div>

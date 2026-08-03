@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink} from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { Section } from "./Section";
 import { Reveal } from "./Reveal";
 import { PROJECTS } from "@/data/portfolio";
@@ -10,8 +10,36 @@ export function Projects() {
     () => ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))],
     [],
   );
+
   const [filter, setFilter] = useState("All");
-  const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
+  const [showAllMobile, setShowAllMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const filtered =
+    filter === "All"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === filter);
+
+  // Collapse again whenever category changes
+  useEffect(() => {
+    setShowAllMobile(false);
+  }, [filter]);
+
+  const displayedProjects =
+    isMobile && !showAllMobile
+      ? filtered.slice(0, 3)
+      : filtered;
 
   return (
     <Section
@@ -40,7 +68,7 @@ export function Projects() {
 
       <div className="grid gap-5 md:grid-cols-2">
         <AnimatePresence mode="popLayout">
-          {filtered.map((p, i) => (
+          {displayedProjects.map((p, i) => (
             <motion.div
               layout
               key={p.title}
@@ -55,18 +83,25 @@ export function Projects() {
                     <img
                       src={p.image}
                       alt={p.title}
-                      className="h-full w-full object-contain bg-white p-3 transition-transform duration-500 group-hover:scale-105"/>
+                      className="h-full w-full object-contain bg-white p-3 transition-transform duration-500 group-hover:scale-105"
+                    />
+
                     <span className="absolute left-4 top-4 rounded-full border border-border bg-background/80 px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur">
                       {p.category}
                     </span>
                   </div>
+
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
+                      <h3 className="text-lg font-semibold tracking-tight">
+                        {p.title}
+                      </h3>
                     </div>
+
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       {p.description}
                     </p>
+
                     <div className="mt-4 flex flex-wrap gap-1.5">
                       {p.tech.map((t) => (
                         <span
@@ -88,14 +123,19 @@ export function Projects() {
                       {p.github && (
                         <a
                           href={p.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-1.5 text-xs transition-all hover:-translate-y-0.5 hover:bg-muted"
                         >
                           <Github size={13} /> GitHub
                         </a>
                       )}
+
                       {p.documentation && (
                         <a
                           href={p.documentation}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs text-background transition-transform hover:-translate-y-0.5"
                         >
                           <ExternalLink size={13} /> Documentation
@@ -109,17 +149,30 @@ export function Projects() {
           ))}
         </AnimatePresence>
       </div>
+
+      {isMobile && filtered.length > 3 && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={() => setShowAllMobile((v) => !v)}
+            className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            {showAllMobile ? "Show Less ↑" : "View More Projects ↓"}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="grid grid-cols-[100px_1fr] gap-4 items-baseline">
+    <div className="grid grid-cols-[100px_1fr] items-baseline gap-4">
       <dt className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
         {label}
       </dt>
-      <dd className="text-sm leading-relaxed text-foreground/80">{value}</dd>
+      <dd className="text-sm leading-relaxed text-foreground/80">
+        {value}
+      </dd>
     </div>
   );
 }
