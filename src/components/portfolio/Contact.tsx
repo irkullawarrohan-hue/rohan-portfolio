@@ -56,11 +56,13 @@ export function Contact() {
                     <div className="grid h-10 w-10 place-items-center rounded-full border border-border">
                       <c.icon size={15} />
                     </div>
+
                     <div>
                       <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
                         {c.label}
                       </div>
-                      <div className="text-sm">{c.value}</div>
+
+                      <div className="text-xs md:text-sm">{c.value}</div>
                     </div>
                   </div>
 
@@ -71,20 +73,26 @@ export function Contact() {
                 </a>
               ) : (
                 <div
-                  key={c.label}
-className="group flex items-center justify-between rounded-2xl border border-border bg-card p-4 md:p-5 transition-all hover:-translate-y-0.5 hover:border-foreground/30"                >
-                  <div className="flex items-center gap-4">
-                   <div className="grid h-9 w-9 md:h-10 md:w-10 place-items-center rounded-full border border-border">
-                      <c.icon size={15} />
-                    </div>
-                    <div>
-                      <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                        {c.label}
-                      </div>
-                      <div className="text-sm">{c.value}</div>
-                    </div>
-                  </div>
-                </div>
+  key={c.label}
+  className="group flex flex-1 items-center justify-between rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-foreground/30"
+>
+  <div className="flex items-center gap-4">
+    <div className="grid h-10 w-10 place-items-center rounded-full border border-border">
+      <c.icon size={15} />
+    </div>
+
+    <div>
+      <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+        {c.label}
+      </div>
+
+      <div className="text-xs md:text-sm">{c.value}</div>
+    </div>
+  </div>
+
+  {/* Invisible placeholder keeps alignment with other cards */}
+  <div className="w-4 h-4 flex-shrink-0" />
+</div>
               )
             )}
           </div>

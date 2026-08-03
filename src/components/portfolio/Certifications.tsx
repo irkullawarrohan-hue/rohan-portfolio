@@ -22,11 +22,11 @@ export function Certifications() {
                     {c.issuer}
                   </div>
 
-                  <h3 className="mt-1.5 text-base font-medium tracking-tight">
+                  <h3 className="mt-1.5 text-sm md:text-base font-medium tracking-tight">
                     {c.name}
                   </h3>
 
-                  <span className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">
+                  <span className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground">
                     <CheckCircle2 size={11} /> {c.status}
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export function Certifications() {
                   href={c.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border py-2 text-sm font-medium transition-colors hover:bg-muted"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border py-2 text-xs font-medium transition-colors hover:bg-muted"
                 >
                   <ExternalLink size={14} />
                   Verify Certificate

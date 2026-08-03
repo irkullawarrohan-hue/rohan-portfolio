@@ -31,7 +31,6 @@ export function Projects() {
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === filter);
 
-  // Collapse again whenever category changes
   useEffect(() => {
     setShowAllMobile(false);
   }, [filter]);
@@ -93,12 +92,12 @@ export function Projects() {
 
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-lg font-semibold tracking-tight">
+                      <h3 className="text-base md:text-lg font-semibold tracking-tight">
                         {p.title}
                       </h3>
                     </div>
 
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2 text-xs md:text-sm leading-relaxed text-muted-foreground">
                       {p.description}
                     </p>
 
@@ -106,14 +105,14 @@ export function Projects() {
                       {p.tech.map((t) => (
                         <span
                           key={t}
-                          className="rounded-md border border-border px-2 py-0.5 text-[11px] text-foreground"
+                          className="rounded-md border border-border px-2 py-0.5 text-[10px] md:text-[11px] text-foreground"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
 
-                    <dl className="mt-6 space-y-3 border-t border-border pt-5 text-sm">
+                    <dl className="mt-6 space-y-3 border-t border-border pt-5">
                       <Row label="Problem" value={p.problem} />
                       <Row label="Challenges" value={p.challenges} />
                       <Row label="Learnings" value={p.learnings} />
@@ -170,7 +169,7 @@ function Row({ label, value }: { label: string; value: string }) {
       <dt className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
         {label}
       </dt>
-      <dd className="text-sm leading-relaxed text-foreground/80">
+      <dd className="text-xs md:text-sm leading-relaxed text-foreground/80">
         {value}
       </dd>
     </div>
