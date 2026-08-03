@@ -55,17 +55,17 @@ export function Certifications() {
               </div>
 
               {/* Mobile */}
-              <div className="mt-5 border-t border-border pt-4 md:hidden">
-                <a
-                  href={c.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border py-2 text-xs font-medium transition-colors hover:bg-muted"
-                >
-                  <ExternalLink size={14} />
-                  Verify Certificate
-                </a>
-              </div>
+              <div className="mt-5 border-t border-border pt-4 md:hidden flex justify-center">
+  <a
+    href={c.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-medium transition-colors hover:bg-muted"
+  >
+    <ExternalLink size={14} />
+    Verify Certificate
+  </a>
+</div>
             </div>
           </Reveal>
         ))}

@@ -85,9 +85,9 @@ export function Projects() {
                       className="h-full w-full object-contain bg-white p-3 transition-transform duration-500 group-hover:scale-105"
                     />
 
-                    <span className="absolute left-4 top-4 rounded-full border border-border bg-background/80 px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur">
-                      {p.category}
-                    </span>
+                    <span className="absolute left-4 top-4 hidden rounded-full border border-border bg-background/80 px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur md:inline-flex">
+  {p.category}
+</span>
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">
