@@ -24,7 +24,7 @@ export function Resume() {
             </p>
 
             <a
-              href="https://drive.google.com/uc?export=download&id=1QViXUZsZ7v-yC3iRD-bu4yhMC1YHIQGj"
+              href="https://drive.google.com/uc?export=download&id=1rOaoM2UHHFCLB8ARcoinKDchNGvxfmPW"
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
             >
               <Download size={16} />

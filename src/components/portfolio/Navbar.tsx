@@ -84,7 +84,7 @@ useEffect(() => {
             {dark ? <Sun size={15} /> : <Moon size={15} />}
           </button>
           <a
-            href="https://drive.google.com/uc?export=download&id=1QViXUZsZ7v-yC3iRD-bu4yhMC1YHIQGj"
+            href="https://drive.google.com/uc?export=download&id=1rOaoM2UHHFCLB8ARcoinKDchNGvxfmPW"
             className="hidden items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             <Download size={14} /> Resume

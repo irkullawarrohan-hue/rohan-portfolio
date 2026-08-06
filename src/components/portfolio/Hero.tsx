@@ -90,7 +90,7 @@ export function Hero() {
               </a>
 
               <a
-                href="https://drive.google.com/uc?export=download&id=1QViXUZsZ7v-yC3iRD-bu4yhMC1YHIQGj"
+                href="https://drive.google.com/uc?export=download&id=1rOaoM2UHHFCLB8ARcoinKDchNGvxfmPW"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-5 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-muted"
               >
                 <Download size={16} />
