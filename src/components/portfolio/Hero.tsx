@@ -42,7 +42,7 @@ export function Hero() {
                 delay: 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mt-6 text-[34px] font-semibold leading-[0.95] tracking-tight sm:text-5xl lg:text-7xl xl:text-[80px]"            >
+              className="mt-6 text-[34px] font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-7xl xl:text-[80px]"           >
               Hi, I'm Rohan —
               <br />
               <span className="text-muted-foreground">
